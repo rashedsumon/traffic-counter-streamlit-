@@ -1,14 +1,14 @@
 """
 data_loader.py
-Automatically downloads the dataset from kagglehub and returns a local path.
+Downloads dataset from KaggleHub and returns path.
 """
 
 import kagglehub
 
 def download_dataset(dataset_id: str) -> str:
     """
-    Download dataset via kagglehub.dataset_download and return path to files.
-    KaggleHub chooses its own cache directory.
+    Downloads dataset from kagglehub and returns local cached path.
+    KaggleHub chooses its own cache folder; you cannot override it.
     """
     print(f"Downloading dataset: {dataset_id}")
     path = kagglehub.dataset_download(dataset_id)
