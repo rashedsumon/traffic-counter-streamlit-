@@ -1,0 +1,14 @@
+{
+  "model": "yolov8n.pt",
+  "device": "cpu",
+  "confidence_threshold": 0.35,
+  "exclude_pedestrians": true,
+  "tracker": {
+    "distance_threshold": 40,
+    "hit_inertia_min": 3
+  },
+  "counting": {
+    "method": "first_seen_center", 
+    "note": "Change to 'line_crossing' for a line crossing approach"
+  }
+}
