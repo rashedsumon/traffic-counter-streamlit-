@@ -1,9 +1,10 @@
 streamlit
 opencv-python-headless
 ultralytics
-norfair
 numpy
 pandas
 moviepy
+imageio
+imageio-ffmpeg
 kagglehub
-tqdm
+Pillow
