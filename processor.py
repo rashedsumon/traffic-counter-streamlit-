@@ -1,15 +1,9 @@
-"""
-processor.py
-Processing pipeline: open video, run detector -> tracker -> counter -> draw -> write output
-"""
-
 import cv2
 import time
 from detector import YOLODetector
 from tracker import NorfairTrackerWrapper
 from utils import draw_overlay, DirectionCounter
 import os
-from moviepy.editor import VideoFileClip
 
 class VideoProcessor:
     def __init__(self, model_path=None, device="cpu", conf_thres=0.35, exclude_pedestrians=True):
@@ -40,13 +34,11 @@ class VideoProcessor:
             if not ret:
                 break
             frame_idx += 1
-            # optionally limit frames for testing
             if max_frames and frame_idx > max_frames:
                 break
 
             # detection
             detections = self.detector.detect(frame)
-            # filter out pedestrians if exclude_pedestrians is True
             if self.exclude_pedestrians:
                 detections = [d for d in detections if d["class_id"] != 0]
 
