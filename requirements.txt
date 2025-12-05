@@ -1,9 +1,9 @@
 streamlit
-opencv-python-headless
+opencv-python
 ultralytics
 norfair
 numpy
 pandas
-tqdm
+moviepy
 kagglehub
-
+tqdm
